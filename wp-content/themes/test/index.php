@@ -22,13 +22,15 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	<div v-bind:style="styleObject">TEST</div>
+	<h1 v-if="Seafood">Yes</h1>
+	<h1 v-else>No</h1>
 </div>
 
 <script>
 	$('#clickMe').click(function(){
 
 	});
+
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
