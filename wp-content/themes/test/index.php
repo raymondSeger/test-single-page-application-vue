@@ -22,7 +22,7 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	<span v-html="name"></span>
+	<span v-bind:title="name">Hi all</span>
 </div>
 
 <script>
@@ -38,19 +38,6 @@
 		data	: mainData
 
 	});
-
-	// get the data Vue object
-	console.log( app8.$data );
-	// get the element of the Vue app
-	console.log( app8.$el );
-
-
-	app8.$watch('name', function (newVal, oldVal) {
-		console.log('New Value:');
-		console.log(newVal);
-		console.log('Old Value:');
-		console.log(oldVal);
-	})
 
 </script>
 
