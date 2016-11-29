@@ -25,7 +25,7 @@
 
 <script>
 	$('#clickMe').click(function(){
-
+		app8.name = 'New name';
 	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
@@ -36,15 +36,18 @@
 		data	: mainData
 	});
 
-	console.log( app8.name === mainData.name ); // -> true
-	
-	// setting the property also affects original data
-	app8.name = "Jett";
-	console.log( mainData.name ); // -> Jett
+	// get the data Vue object
+	console.log( app8.$data );
+	// get the element of the Vue app
+	console.log( app8.$el );
 
-	// ... and vice-versa
-	mainData.name = "Gabriel";
-	console.log( app8.name  ); // -> Gabriel
+
+	app8.$watch('name', function (newVal, oldVal) {
+		console.log('New Value:');
+		console.log(newVal);
+		console.log('Old Value:');
+		console.log(oldVal);
+	})
 
 </script>
 
