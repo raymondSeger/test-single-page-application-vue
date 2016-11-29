@@ -19,8 +19,8 @@
 
 <div id="app-9">
 
-	<li v-for="item in items">
-		{{ item.message }}
+	<li v-for="(item, index) in items">
+		{{ parentMessage }} - {{ index }} - {{ item.message }}
 	</li>
 
 </div>
@@ -33,6 +33,7 @@
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
+		parentMessage: 'Parent',
 		items: [
 			{ message: 'Foo' },
 			{ message: 'Bar' }
