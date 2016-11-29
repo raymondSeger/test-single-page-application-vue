@@ -22,8 +22,11 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	<h1 v-if="Seafood">Yes</h1>
-	<h1 v-else>No</h1>
+	<template v-if="likeSeaFood">
+		<h1>Title</h1>
+		<p>Paragraph 1</p>
+		<p>Paragraph 2</p>
+	</template>
 </div>
 
 <script>
