@@ -17,18 +17,12 @@
 
 <div id="clickMe" style="margin-bottom: 50px;">Something happens</div>
 
-<div id="app-8">
-	Name: {{ name }} <br />
-	Age: {{ age }} <br />
-	Like Seafood: {{ likeSeaFood }} <br />
+<div id="app-9">
 
-	<div v-if="Math.random() > 0.5">
-		Now you see me
-	</div>
-	<div v-else>
-		Now you don't
-	</div>
-	
+	<li v-for="item in items">
+		{{ item.message }}
+	</li>
+
 </div>
 
 <script>
@@ -39,27 +33,18 @@
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
-		name				: "raymond",
-		age					: 26,
-		likeSeaFood			: true,
-		styleObject: {
-			color		: 'red',
-			fontSize	: '13px'
-		}
+		items: [
+			{ message: 'Foo' },
+			{ message: 'Bar' }
+		]
 	};
 
 	var app8 = new Vue({
-		el		: '#app-8',
+		el		: '#app-9',
 		data	: mainData,
 		methods : {
-			doSomething : function() {
-				alert('a');
-			}
 		},
 		computed: {
-			reversedName: function () {
-				return this.name.split('').reverse().join('')
-			}
 		}
 	});
 
