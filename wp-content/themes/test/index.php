@@ -17,20 +17,31 @@
 
 <div id="clickMe">Something happens</div>
 
-<div id="app-6">
-	<p>{{ message }}</p>
-	<input v-model="message">
+<div id="app-7">
+	<ol>
+		<!-- get item object from groceryList, put item object to to-do, which will be taken by the template -->
+		<todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+	</ol>
 </div>
-
 <script>
 	$('#clickMe').click(function(){
-
+		app7.groceryList.push({text: "new value"});
 	});
 
-	var app6 = new Vue({
-		el: '#app-6',
+	// global component with property of to do, with template inline, to-do object will from from v-bind
+	Vue.component('todo-item', {
+		props: ['todo'],
+		template: '<li>{{ todo.text }}</li>'
+	})
+
+	var app7 = new Vue({
+		el: '#app-7',
 		data: {
-			message: 'Hello Vue!'
+			groceryList: [
+				{ text: 'Vegetables' },
+				{ text: 'Cheese' },
+				{ text: 'Whatever else humans are supposed to eat' }
+			]
 		}
 	})
 
