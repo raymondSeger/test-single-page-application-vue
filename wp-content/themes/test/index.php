@@ -19,9 +19,7 @@
 
 <div id="app-9">
 
-	<div>
-		<span v-for="n in 10">{{ n }}</span>
-	</div>
+	<li v-for="n in evenNumbers">{{ n }}</li>
 
 </div>
 
@@ -33,11 +31,7 @@
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
-		object: {
-			FirstName: 'John',
-			LastName: 'Doe',
-			Age: 30
-		},
+		numbers: [ 1, 2, 3, 4, 5 ],
 		items: [
 			{ message: 'Foo' },
 			{ message: 'Bar' }
@@ -50,6 +44,11 @@
 		methods : {
 		},
 		computed: {
+			evenNumbers: function () {
+				return this.numbers.filter(function (number) {
+					return number % 2 === 0
+				})
+			}
 		}
 	});
 
