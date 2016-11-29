@@ -17,9 +17,9 @@
 
 <div id="clickMe">Something happens</div>
 
-<div id="app-5">
+<div id="app-6">
 	<p>{{ message }}</p>
-	<button v-on:click="reverseMessage">Reverse Message</button>
+	<input v-model="message">
 </div>
 
 <script>
@@ -27,15 +27,10 @@
 
 	});
 
-	var app5 = new Vue({
-		el: '#app-5',
+	var app6 = new Vue({
+		el: '#app-6',
 		data: {
-			message: 'Hello Vue.js!'
-		},
-		methods: {
-			reverseMessage: function () {
-				this.message = this.message.split('').reverse().join('')
-			}
+			message: 'Hello Vue!'
 		}
 	})
 
