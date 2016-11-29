@@ -22,20 +22,23 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	<button v-bind:disabled="someDynamicCondition">Button</button>
+	{{ age + 1 }}
+	{{ likeSeaFood ? 'YES' : 'NO' }}
+	{{ name.split('').reverse().join('') }}
+
+	<div v-bind:id="'list-' + age"></div>
 </div>
 
 <script>
 	$('#clickMe').click(function(){
-		app8.someDynamicCondition = app8.someDynamicCondition ? false : true;
+
 	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
 		name				: "raymond",
 		age					: 26,
-		likeSeaFood			: true,
-		someDynamicCondition: true
+		likeSeaFood			: true
 	};
 
 	var app8 = new Vue({
