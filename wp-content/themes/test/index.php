@@ -15,34 +15,25 @@
 </head>
 <body>
 
-<div id="clickMe">Something happens</div>
+<div id="clickMe" style="margin-bottom: 50px;">Something happens</div>
 
-<div id="app-7">
-	<ol>
-		<!-- get item object from groceryList, put item object to to-do, which will be taken by the template -->
-		<todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
-	</ol>
+<div id="app-8">
+	Name: {{ name }} <br>
+	Age: {{ age }} <br>
+	Like Seafood: {{ likeSeaFood }}
 </div>
+
 <script>
 	$('#clickMe').click(function(){
-		app7.groceryList.push({text: "new value"});
+
 	});
 
-	// global component with property of to do, with template inline, to-do object will from from v-bind
-	Vue.component('todo-item', {
-		props: ['todo'],
-		template: '<li>{{ todo.text }}</li>'
-	})
+	// design pattern for SPA, show the global json object and make it into the front-end
+	var mainData = { name: "raymond", age: 26, likeSeaFood: true };
 
-	var app7 = new Vue({
-		el: '#app-7',
-		data: {
-			groceryList: [
-				{ text: 'Vegetables' },
-				{ text: 'Cheese' },
-				{ text: 'Whatever else humans are supposed to eat' }
-			]
-		}
+	var app8 = new Vue({
+		el		: '#app-8',
+		data	: mainData
 	})
 
 </script>
