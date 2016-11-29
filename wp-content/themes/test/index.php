@@ -19,7 +19,10 @@
 
 <div id="app-9">
 
-	<li v-for="n in evenNumbers">{{ n }}</li>
+	<span>Multiline message is:</span>
+	<p style="white-space: pre">{{ message }}</p>
+	<br>
+	<textarea v-model="message" placeholder="add multiple lines"></textarea>
 
 </div>
 
@@ -31,11 +34,7 @@
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
-		numbers: [ 1, 2, 3, 4, 5 ],
-		items: [
-			{ message: 'Foo' },
-			{ message: 'Bar' }
-		]
+		message: ''
 	};
 
 	var app8 = new Vue({
@@ -44,11 +43,7 @@
 		methods : {
 		},
 		computed: {
-			evenNumbers: function () {
-				return this.numbers.filter(function (number) {
-					return number % 2 === 0
-				})
-			}
+			
 		}
 	});
 
