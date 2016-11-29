@@ -34,7 +34,17 @@
 	var app8 = new Vue({
 		el		: '#app-8',
 		data	: mainData
-	})
+	});
+
+	console.log( app8.name === mainData.name ); // -> true
+	
+	// setting the property also affects original data
+	app8.name = "Jett";
+	console.log( mainData.name ); // -> Jett
+
+	// ... and vice-versa
+	mainData.name = "Gabriel";
+	console.log( app8.name  ); // -> Gabriel
 
 </script>
 
