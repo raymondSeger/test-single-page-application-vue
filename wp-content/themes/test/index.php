@@ -22,12 +22,12 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	<span v-once>This will never change: {{ name }}</span>
+	<span v-html="name"></span>
 </div>
 
 <script>
 	$('#clickMe').click(function(){
-		app8.name = 'New name';
+		app8.name = 'New Name';
 	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
