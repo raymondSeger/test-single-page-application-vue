@@ -16,7 +16,7 @@
 <body>
 
 <div id="app-2">
-  <span v-bind:title="message">
+  <span id="hover" v-bind:title="message">
     Hover your mouse over me for a few seconds to see my dynamically bound title!
   </span>
 </div>
@@ -28,6 +28,10 @@
 			message: 'You loaded this page on ' + new Date()
 		}
 	})
+
+	$('#hover').hover(function(){
+		app2.message = 'hello';
+	}, function(){})
 </script>
 
 </body>
