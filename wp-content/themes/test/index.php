@@ -22,19 +22,24 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	{{ reversedName }}
+	<div v-bind:class="classObject">TEST</div>
 </div>
 
 <script>
 	$('#clickMe').click(function(){
-		mainData.name = "Gabriel";
+
 	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
 		name				: "raymond",
 		age					: 26,
-		likeSeaFood			: true
+		likeSeaFood			: true,
+		classObject: {
+			active			: true,
+			'textDanger'	: false,
+			'kaBlah'		: true
+		}
 	};
 
 	var app8 = new Vue({
