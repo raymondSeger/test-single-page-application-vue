@@ -22,11 +22,13 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	<template v-if="likeSeaFood">
-		<h1>Title</h1>
-		<p>Paragraph 1</p>
-		<p>Paragraph 2</p>
-	</template>
+	<div v-if="Math.random() > 0.5">
+		Now you see me
+	</div>
+	<div v-else>
+		Now you don't
+	</div>
+	
 </div>
 
 <script>
