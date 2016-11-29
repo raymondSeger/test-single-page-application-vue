@@ -22,12 +22,12 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	{{ name | capitalize | filterB }}
+	{{ reversedName }}
 </div>
 
 <script>
 	$('#clickMe').click(function(){
-
+		mainData.name = "Gabriel";
 	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
@@ -45,23 +45,9 @@
 				alert('a');
 			}
 		},
-		filters: {
-			capitalize: function (value) {
-				if (!value) {
-					return '';
-				} else {
-					value = value.toString();
-					return value.charAt(0).toUpperCase() + value.slice(1);
-				}
-
-			},
-			filterB: function (value) {
-				if (!value) {
-					return '';
-				} else {
-					value = value.toString();
-					return value + ' 888';
-				}
+		computed: {
+			reversedName: function () {
+				return this.name.split('').reverse().join('')
 			}
 		}
 	});
