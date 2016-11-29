@@ -26,7 +26,7 @@
 	{{ likeSeaFood ? 'YES' : 'NO' }}
 	{{ name.split('').reverse().join('') }}
 
-	<div v-bind:id="'list-' + age"></div>
+	<div v-on:click="doSomething">TEST</div>
 </div>
 
 <script>
@@ -43,7 +43,12 @@
 
 	var app8 = new Vue({
 		el		: '#app-8',
-		data	: mainData
+		data	: mainData,
+		methods : {
+			doSomething : function() {
+				alert('a');
+			}
+		}
 	});
 
 </script>
