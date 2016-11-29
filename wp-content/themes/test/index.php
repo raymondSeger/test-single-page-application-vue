@@ -22,7 +22,7 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	{{ name | capitalize }}
+	{{ name | capitalize | filterB }}
 </div>
 
 <script>
@@ -54,6 +54,14 @@
 					return value.charAt(0).toUpperCase() + value.slice(1);
 				}
 
+			},
+			filterB: function (value) {
+				if (!value) {
+					return '';
+				} else {
+					value = value.toString();
+					return value + ' 888';
+				}
 			}
 		}
 	});
