@@ -15,5 +15,18 @@
 </head>
 <body>
 
+<div id="app">
+	{{ message }}
+</div>
+
+<script>
+	var app = new Vue({
+		el	: $('#app').get(0),
+		data: {
+			message: 'Hello Vue!'
+		}
+	})
+</script>
+
 </body>
 </html>
