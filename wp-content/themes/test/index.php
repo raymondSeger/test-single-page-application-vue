@@ -15,23 +15,17 @@
 </head>
 <body>
 
-<div id="app-2">
-  <span id="hover" v-bind:title="message">
-    Hover your mouse over me for a few seconds to see my dynamically bound title!
-  </span>
+<div id="app-3">
+	<p v-if="seen">Now you see me</p>
 </div>
 
 <script>
-	var app2 = new Vue({
-		el: '#app-2',
+	var app3 = new Vue({
+		el: '#app-3',
 		data: {
-			message: 'You loaded this page on ' + new Date()
+			seen: true
 		}
 	})
-
-	$('#hover').hover(function(){
-		app2.message = 'hello';
-	}, function(){})
 </script>
 
 </body>
