@@ -19,10 +19,7 @@
 
 <div id="app-9">
 
-	<span>Multiline message is:</span>
-	<p style="white-space: pre">{{ message }}</p>
-	<br>
-	<textarea v-model="message" placeholder="add multiple lines"></textarea>
+	<my-component></my-component>
 
 </div>
 
@@ -31,19 +28,21 @@
 
 	});
 
+	Vue.component('my-component', {
+		template: '<div>A custom component!</div>'
+	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
 		message: ''
 	};
 
-	var app8 = new Vue({
+	var app9 = new Vue({
 		el		: '#app-9',
 		data	: mainData,
 		methods : {
 		},
 		computed: {
-			
 		}
 	});
 
