@@ -19,9 +19,12 @@
 
 <div id="app-9">
 
-	<li v-for="(item, index) in items">
-		{{ parentMessage }} - {{ index }} - {{ item.message }}
-	</li>
+	<ul>
+		<template v-for="item in items">
+			<li>{{ item.message }}</li>
+			<hr>
+		</template>
+	</ul>
 
 </div>
 
