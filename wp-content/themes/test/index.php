@@ -19,7 +19,9 @@
 
 <div id="app-9">
 
-	<my-component></my-component>
+	<simple-counter></simple-counter>
+	<simple-counter></simple-counter>
+	<simple-counter></simple-counter>
 
 </div>
 
@@ -28,8 +30,13 @@
 
 	});
 
-	Vue.component('my-component', {
-		template: '<div>A custom component!</div>'
+	Vue.component('simple-counter', {
+		template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+		data: function () {
+			return {
+				counter: 0
+			}
+		}
 	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
