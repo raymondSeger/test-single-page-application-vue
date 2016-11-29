@@ -22,7 +22,7 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	<div v-bind:class="classObject">TEST</div>
+	<div v-bind:style="styleObject">TEST</div>
 </div>
 
 <script>
@@ -35,10 +35,9 @@
 		name				: "raymond",
 		age					: 26,
 		likeSeaFood			: true,
-		classObject: {
-			active			: true,
-			'textDanger'	: false,
-			'kaBlah'		: true
+		styleObject: {
+			color		: 'red',
+			fontSize	: '13px'
 		}
 	};
 
