@@ -19,11 +19,10 @@
 
 <div id="app-9">
 
-	<ul>
-		<template v-for="item in items">
-			<li>{{ item.message }}</li>
-			<hr>
-		</template>
+	<ul id="repeat-object" class="demo">
+		<li v-for="value in object">
+			{{ value }}
+		</li>
 	</ul>
 
 </div>
@@ -36,7 +35,11 @@
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
-		parentMessage: 'Parent',
+		object: {
+			FirstName: 'John',
+			LastName: 'Doe',
+			Age: 30
+		},
 		items: [
 			{ message: 'Foo' },
 			{ message: 'Bar' }
