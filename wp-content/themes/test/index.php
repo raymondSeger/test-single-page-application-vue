@@ -19,9 +19,9 @@
 
 <div id="app-9">
 
-	<simple-counter message="hello!"></simple-counter>
-	<simple-counter message="hello2!"></simple-counter>
-	<simple-counter message="hello3!"></simple-counter>
+	<p>{{ total }}</p>
+	<button-counter v-on:increment="incrementTotal"></button-counter>
+	<button-counter v-on:increment="incrementTotal"></button-counter>
 
 </div>
 
@@ -30,25 +30,34 @@
 
 	});
 
-	Vue.component('simple-counter', {
-		props: ['message'],
-		template: '<div><span>{{ message }}</span> <button v-on:click="counter += 1">{{ counter }}</button></div>',
+	Vue.component('button-counter', {
+		template: '<button v-on:click="increment">{{ counter }}</button>',
 		data: function () {
 			return {
 				counter: 0
 			}
-		}
+		},
+		methods: {
+			increment: function () {
+				this.counter += 1
+				this.$emit('increment')
+			}
+		},
 	});
 
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = {
+		total: 0,
 		message: ''
 	};
 
 	var app9 = new Vue({
 		el		: '#app-9',
 		data	: mainData,
-		methods : {
+		methods: {
+			incrementTotal: function () {
+				this.total += 1
+			}
 		},
 		computed: {
 		}
