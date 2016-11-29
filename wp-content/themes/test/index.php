@@ -19,11 +19,9 @@
 
 <div id="app-9">
 
-	<ul id="repeat-object" class="demo">
-		<li v-for="value in object">
-			{{ value }}
-		</li>
-	</ul>
+	<div v-for="(value, key, index) in object">
+		{{ index }}. {{ key }} : {{ value }}
+	</div>
 
 </div>
 
