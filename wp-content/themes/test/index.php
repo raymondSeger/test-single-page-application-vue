@@ -19,9 +19,9 @@
 
 <div id="app-9">
 
-	<simple-counter></simple-counter>
-	<simple-counter></simple-counter>
-	<simple-counter></simple-counter>
+	<simple-counter message="hello!"></simple-counter>
+	<simple-counter message="hello2!"></simple-counter>
+	<simple-counter message="hello3!"></simple-counter>
 
 </div>
 
@@ -31,7 +31,8 @@
 	});
 
 	Vue.component('simple-counter', {
-		template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+		props: ['message'],
+		template: '<div><span>{{ message }}</span> <button v-on:click="counter += 1">{{ counter }}</button></div>',
 		data: function () {
 			return {
 				counter: 0
