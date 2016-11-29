@@ -18,9 +18,11 @@
 <div id="clickMe" style="margin-bottom: 50px;">Something happens</div>
 
 <div id="app-8">
-	Name: {{ name }} <br>
-	Age: {{ age }} <br>
-	Like Seafood: {{ likeSeaFood }}
+	Name: {{ name }} <br />
+	Age: {{ age }} <br />
+	Like Seafood: {{ likeSeaFood }} <br />
+
+	<span v-once>This will never change: {{ name }}</span>
 </div>
 
 <script>
@@ -31,20 +33,10 @@
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = { name: "raymond", age: 26, likeSeaFood: true };
 
-	// for more events: https://vuejs.org/v2/guide/instance.html#Properties-and-Methods
 	var app8 = new Vue({
 		el		: '#app-8',
-		data	: mainData,
-		beforeCreate: function () {
-			// when the Vue app is created
-			console.log('beforeCreate event!');
-			console.log(this)
-		},
-		created: function () {
-			// when the Vue app is created
-			console.log('created event!');
-			console.log(this)
-		}
+		data	: mainData
+
 	});
 
 	// get the data Vue object
