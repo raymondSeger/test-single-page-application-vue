@@ -22,11 +22,7 @@
 	Age: {{ age }} <br />
 	Like Seafood: {{ likeSeaFood }} <br />
 
-	{{ age + 1 }}
-	{{ likeSeaFood ? 'YES' : 'NO' }}
-	{{ name.split('').reverse().join('') }}
-
-	<div v-on:click="doSomething">TEST</div>
+	{{ name | capitalize }}
 </div>
 
 <script>
@@ -47,6 +43,17 @@
 		methods : {
 			doSomething : function() {
 				alert('a');
+			}
+		},
+		filters: {
+			capitalize: function (value) {
+				if (!value) {
+					return '';
+				} else {
+					value = value.toString();
+					return value.charAt(0).toUpperCase() + value.slice(1);
+				}
+
 			}
 		}
 	});
