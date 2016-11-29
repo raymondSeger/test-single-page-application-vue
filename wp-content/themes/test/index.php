@@ -31,9 +31,20 @@
 	// design pattern for SPA, show the global json object and make it into the front-end
 	var mainData = { name: "raymond", age: 26, likeSeaFood: true };
 
+	// for more events: https://vuejs.org/v2/guide/instance.html#Properties-and-Methods
 	var app8 = new Vue({
 		el		: '#app-8',
-		data	: mainData
+		data	: mainData,
+		beforeCreate: function () {
+			// when the Vue app is created
+			console.log('beforeCreate event!');
+			console.log(this)
+		},
+		created: function () {
+			// when the Vue app is created
+			console.log('created event!');
+			console.log(this)
+		}
 	});
 
 	// get the data Vue object
